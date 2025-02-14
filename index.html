@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Poll</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="poll-container">
+        <h1>Shall we remove the rotating cooking shift?</h1>
+        <p>
+            Context:<br>
+            Currently, each of the 6 people in the house is assigned a cooking day, with one extra day as a rotating shift. Since everyone is busy with work, we propose removing the rotating shift. On that day, each person would prepare their own food and clean their own dishes.
+        </p>
+        
+        <h2>Options:</h2>
+        <div class="options">
+            <button onclick="submitVote('Yes')">Yes, remove the rotating shift</button>
+            <button onclick="submitVote('No')">No, keep the rotating shift</button>
+        </div>
+        
+        <div class="name-input">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" placeholder="Your Name">
+        </div>
+        
+        <div class="password-input">
+            <label for="password">Enter password to see results:</label>
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
