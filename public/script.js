@@ -54,13 +54,71 @@ function submitVote(option) {
 }
 
 function showUserVote(option) {
+    const nameInput = document.getElementById("name");
+    const name = nameInput.value.trim(); // Get the name and remove extra spaces
     const resultsDiv = document.getElementById("results");
+
+    // Check if name is entered, if not, show a message and return
+    if (!name) {
+        resultsDiv.innerHTML = `<h2 style="color: red;">Please enter your name before voting!</h2>`;
+        return;
+    }
 
     // Display confirmation of the user's vote
     resultsDiv.innerHTML = `
         <h2>Thank you for voting!</h2>
         <p>You voted: ${option}</p>
+        <div class="heart-animation">❤️</div>
     `;
+
+    setTimeout(() => {
+        resultsDiv.innerHTML += `<h2 class="valentine-message">Happy Valentine's Day, ${name}! 💖</h2>`;
+        animateHeart();
+    }, 2000);
+}
+
+
+function animateHeart() {
+    const resultsDiv = document.getElementById("results");
+    const heart = document.createElement("div");
+    heart.classList.add("exploding-heart");
+    resultsDiv.appendChild(heart);
+
+    // Generate sparks that explode from the heart
+    setTimeout(() => {
+        createExplosionSparks(heart);
+    }, 1500);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 3000);
+}
+
+function createExplosionSparks(heart) {
+    const numSparks = 10;
+    const resultsDiv = document.getElementById("results");
+
+    for (let i = 0; i < numSparks; i++) {
+        const spark = document.createElement("div");
+        spark.classList.add("heart-spark");
+
+        // Randomize the spark's position
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * 100 + 50;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
+        spark.style.setProperty('--x', `${x}px`);
+        spark.style.setProperty('--y', `${y}px`);
+
+        resultsDiv.appendChild(spark);
+
+        // Set random delay for each spark
+        setTimeout(() => {
+            spark.style.opacity = '1';
+            spark.innerHTML = '❤️';
+        }, Math.random() * 500);
+    }
 }
 
 function showResults() {

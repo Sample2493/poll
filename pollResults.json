@@ -1,7 +1,7 @@
 {
   "votes": {
-    "Yes": 2,
-    "No": 0
+    "Yes": 11,
+    "No": 3
   },
   "voters": [
     {
@@ -11,6 +11,54 @@
     {
       "name": "prathap",
       "vote": "Yes"
+    },
+    {
+      "name": "scs",
+      "vote": "Yes"
+    },
+    {
+      "name": "Zxcsac",
+      "vote": "Yes"
+    },
+    {
+      "name": "aacAC",
+      "vote": "No"
+    },
+    {
+      "name": "ZaD",
+      "vote": "Yes"
+    },
+    {
+      "name": "asa",
+      "vote": "Yes"
+    },
+    {
+      "name": "za",
+      "vote": "Yes"
+    },
+    {
+      "name": "za",
+      "vote": "Yes"
+    },
+    {
+      "name": "ds",
+      "vote": "Yes"
+    },
+    {
+      "name": "AXasc",
+      "vote": "Yes"
+    },
+    {
+      "name": "aasa",
+      "vote": "No"
+    },
+    {
+      "name": "aas",
+      "vote": "Yes"
+    },
+    {
+      "name": "aaa",
+      "vote": "No"
     }
   ]
 }

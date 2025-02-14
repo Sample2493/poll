@@ -1,3 +1,4 @@
+/* General body styles */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -11,10 +12,12 @@ body {
     background-color: #fce6e6;
 }
 
+/* Heading styles */
 h1 {
     font-size: 24px;
 }
 
+/* Input and button styles */
 .name-input, .options, .password-input {
     margin: 20px;
 }
@@ -29,48 +32,61 @@ button {
     cursor: pointer;
 }
 
-.heart {
-    font-size: 100px;
-    animation: heart-expand 2s ease-out forwards;
+/* Heart animation when the user votes */
+.heart-animation {
+    font-size: 50px;
+    animation: heartGrow 1.5s ease-in-out;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
 }
 
-.flower {
-    font-size: 30px;
+/* Exploding heart animation */
+.exploding-heart {
     position: absolute;
-    animation: flower-explode 1s ease forwards;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    animation: heartGrow 1.5s ease-in-out, explosion 1s ease-out forwards;
+    animation-delay: 1.5s;
     opacity: 0;
-    z-index: 50;
 }
 
-@keyframes heart-expand {
+/* Keyframe animation for growing the heart */
+@keyframes heartGrow {
     0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(2);
+        transform: scale(0);
+        opacity: 1;
     }
     100% {
-        transform: translate(-50%, -50%) scale(3);
+        transform: scale(2);
+        opacity: 1;
+    }
+}
+
+/* Keyframe explosion animation for sparks */
+@keyframes explosion {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.2);
         opacity: 0;
     }
 }
 
-@keyframes flower-explode {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(2);
-    }
+/* Small heart sparks flying out */
+.heart-spark {
+    position: absolute;
+    font-size: 10px;
+    animation: explosion 1s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
+/* Valentine's Day message style */
 .valentine-message {
     font-size: 30px;
     color: #ff007f;
@@ -79,6 +95,7 @@ button {
     animation: fade-in 3s ease forwards;
 }
 
+/* Fade-in animation for the Valentine's Day message */
 @keyframes fade-in {
     0% {
         opacity: 0;
