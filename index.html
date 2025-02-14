@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll - Valentine's Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="name-input">
+        <h2>Enter your name to vote:</h2>
+        <input type="text" id="name" placeholder="Enter your name" />
+        <input type="password" id="password" placeholder="Enter password for admin results" />
+        <button onclick="showVotingOptions()">Start Voting</button>
+    </div>
+
+    <div class="options" style="display: none;">
+        <h2>Choose your option:</h2>
+        <button onclick="submitVote('Yes')">Yes</button>
+        <button onclick="submitVote('No')">No</button>
+    </div>
+
+    <div id="results"></div>
+
+    <script src="script.js"></script>  <!-- Link to your JavaScript file -->
+</body>
+</html>

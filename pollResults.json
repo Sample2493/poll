@@ -1,0 +1,16 @@
+{
+  "votes": {
+    "Yes": 2,
+    "No": 0
+  },
+  "voters": [
+    {
+      "name": "jacob",
+      "vote": "Yes"
+    },
+    {
+      "name": "prathap",
+      "vote": "Yes"
+    }
+  ]
+}
